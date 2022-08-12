@@ -53,15 +53,9 @@ exports.createItem = async (req, res) => {
 exports.getItemById =  async (req, res) => {
 	try {
 		let items = await Items.findById(req.params.id)
-		res.status(200).JSONResponse({
-			status: "Success",
-			results: items
-		})
+		JSONResponse.success(res, 'Success.', items, 200)
 	} catch (error) {
-		res.status(500).JSONResponse({
-			status: "Fail",
-			message: error
-		})
+		JSONResponse.error(res, 'Failure handling item model.', error, 500)
 	}
 }
 
@@ -72,16 +66,10 @@ exports.getItemById =  async (req, res) => {
 
 exports.updateItem = async(req, res, next) => {
 	try {
-		let itemsInfo = await Items.findByIdAndUpdate(req.body, req.params.id)
-		res.status(200).JSONResponse({
-			status: "Success",
-			results: itemsInfo
-		})
+		let items = await Items.updateOne(req.param.id, req.body)
+		JSONResponse.success(res, 'Success', items, 200)
 	} catch (error) {
-		res.status(500).JSONResponse({
-			status: "Fail",
-			message: error
-		})
+		JSONResponse.error(res, 'Failure handling item model.', error, 500)
 	}
 }
 

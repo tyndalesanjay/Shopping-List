@@ -23,4 +23,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  deleteItem(id: String){
+    this.categoryService.deleteItem(id).subscribe((results) => {
+      if(results) {
+        alert('Worked')
+      }
+      alert('Fail')
+    })
+  }
+
 }

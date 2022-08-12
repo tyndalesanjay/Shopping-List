@@ -8,6 +8,7 @@ import { ShoppingListComponent } from './pages/shopping-list/shopping-list.compo
 import { ShoppingEditComponent } from './pages/shopping-edit/shopping-edit.component';
 import { ShoppingAddComponent } from './pages/shopping-add/shopping-add.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

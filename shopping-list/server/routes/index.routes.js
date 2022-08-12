@@ -6,6 +6,7 @@ const {
 	deleteItemsById,
 	getAllItems,
 	getItemById,
+	updateItem,
 } = require('../controllers/items.controller')
 
 router
@@ -15,6 +16,7 @@ router
 
 router
 	.get('/listItem/:id', getItemById)
+	.put('/update_item/:id', updateItem)
 	.delete('/delete/:id', deleteItemsById )
 
 module.exports = router

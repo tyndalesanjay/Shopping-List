@@ -19,4 +19,16 @@ export class CategoryServiceService {
   getCatList(id: any): Observable<any> {
     return this.http.get<Categories>(`${this.baseUrl + 'catList'}/${id}`)
   }
+
+  createCate(data: any): Observable<Categories> {
+    return this.http.post<Categories>(this.baseUrl, data)
+  }
+
+  updateCate(id: any, data: any): Observable<any> {
+    return this.http.put<Categories>(`${this.baseUrl + 'updateCate'} +${id}`, data)
+  }
+
+  deleteItem(id: any): Observable<Categories> {
+    return this.http.delete<Categories>(`${this.baseUrl + 'delete'}/${id}`)
+  }
 }

@@ -13,7 +13,7 @@ import { Categories } from 'src/app/interfaces/category';
 export class ShoppingListComponent implements OnInit {
 
   lists: Items[] = []
-  category: Items[] = []
+  category:any = []
 
   constructor(private listService: ListServiceService,private categoryService: CategoryServiceService ,private route: ActivatedRoute,) { }
 
@@ -32,9 +32,8 @@ export class ShoppingListComponent implements OnInit {
   getById(id: any) {
     this.categoryService.getCatList(id).subscribe((data: any) => {
       this.lists = data.data
-      this.category = data.data[0].categoryID
-      console.log(this.lists)
-      console.log(this.category)
+      this.category = data.data[0].categoryID.category
+      
     })
   }
 

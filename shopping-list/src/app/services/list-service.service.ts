@@ -15,8 +15,20 @@ export class ListServiceService {
     return this.http.get<Items>(this.baseUrl + 'shoppingList')
   }
 
+  getItemById(id: any): Observable<any> {
+    return this.http.get<Items>(`${this.baseUrl + 'listItem'}/${id}`, id)
+  }
+
   create(data: any): Observable<any> {
     return this.http.post<Items>(this.baseUrl + 'shopping_add', data)
+  }
+
+  update(data: Items, id: any): Observable<any>{
+    return this.http.put<Items>(`${this.baseUrl + 'update_item'}/${id}`, data)
+  }
+
+  deleteItem(id: any): Observable<any> {
+    return this.http.delete<Items>(`${this.baseUrl + 'delete'}/${id}`)
   }
 
 }

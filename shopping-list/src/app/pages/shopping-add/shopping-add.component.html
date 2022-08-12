@@ -1,39 +1,35 @@
 <div class="container">
-  <!-- <a routerLink="/students">
-      <i class="fa-solid fa-circle-arrow-left"></i>
-      Back</a
-    > -->
-
-  <form action="">
-    <h2>Add new item</h2>
-    <div hidden>
-      <label for="_id">ID</label><br />
-      <input type="text" id="_id" name="_id" />
+  <div class="shopping">
+    <div class="shop-image">
+      <div class="shop-details">
+        <div class="heading">
+          <h1>Shopping List</h1>
+          <p>Add New Item</p>
+        </div>
+  
+      </div>
+  
     </div>
-    <div>
-      <label for="category">Category</label><br />
-      <!-- <input type="text" id="category" name="category" /> -->
-      <select name="category" id="category">
-        <option value=""></option>
-        <option value="Veg">Veg</option>
-        <option value="Veg">Veg</option>
-        <option value="Veg">Veg</option>
-      </select>
+    <div class="shopping-form">
+      <form (submit)="onSubmit()" [formGroup]="addList" action="">
+        <h1>Add New Item</h1>
+        <label for="">Item Name</label>
+        <input type="text" name="item_name" formControlName="item_name">
+  
+        <label for="">Category</label>
+        <select name="" id="" formControlName="categoryID">
+          <option value="{{cat._id}}" *ngFor="let cat of categories">{{cat.category}}</option>
+        </select>
+  
+        <label for="">Price</label>
+        <input type="number" formControlName="price" name="price">
+  
+        <label for="">Quantity</label>
+        <input type="number" formControlName="quantity" name="quantity">
+  
+  
+        <button type="submit"  > Add Item</button>
+      </form>
     </div>
-    <div>
-      <label for="item_name">Name</label><br />
-      <input type="text" id="item_name" name="item_name" />
-    </div>
-    <div>
-      <label for="price">Price</label><br />
-      <input type="number" id="price" name="price" />
-    </div>
-    <div>
-      <label for="quantity">Quantity</label><br />
-      <input type="number" id="quantity" name="quantity" />
-    </div>
-    <div>
-      <button>Add</button>
-    </div>
-  </form>
+  </div>
 </div>

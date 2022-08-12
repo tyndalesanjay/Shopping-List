@@ -4,36 +4,46 @@
       Back</a
     > -->
 
-  <form action="">
+  <form (submit)="updateItem(item._id)">
     <h2>Edit item</h2>
     <div hidden>
       <label for="_id">ID</label><br />
       <input type="text" id="_id" name="_id" />
     </div>
     <div>
-      <label for="category">Category</label><br />
-      <!-- <input type="text" id="category" name="category" /> -->
-      <select name="category" id="category">
-        <option value=""></option>
-        <option value="Veg">Veg</option>
-        <option value="Veg">Veg</option>
-        <option value="Veg">Veg</option>
-      </select>
     </div>
     <div>
       <label for="item_name">Name</label><br />
-      <input type="text" id="item_name" name="item_name" />
+      <input
+        type="text"
+        id="item_name"
+        #item_name
+        name="item_name"
+        [(ngModel)]="updateInfo.item_name"
+      />
     </div>
     <div>
       <label for="price">Price</label><br />
-      <input type="number" id="price" name="price" />
+      <input
+        type="number"
+        id="price"
+        name="price"
+        [(ngModel)]="updateInfo.price"
+        #price
+      />
     </div>
     <div>
       <label for="quantity">Quantity</label><br />
-      <input type="number" id="quantity" name="quantity" />
+      <input
+        type="number"
+        id="quantity"
+        #quantity
+        name="quantity"
+        [(ngModel)]="updateInfo.quantity"
+      />
     </div>
     <div>
-      <button>Update</button>
+      <input type="submit"/>
     </div>
   </form>
 </div>
