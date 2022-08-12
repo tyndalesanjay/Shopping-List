@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card" *ngFor="let list of lists">
+    <div class="top">
+      <h3>Category:</h3>
+    </div>
+    <div class="body">
+      <p>Name: {{list.item_name}}</p>
+      <p>Quantity: {{list.quantity}}</p>
+      <p>Price: {{list.price}}</p>
+      <div class="icons">
+        <a routerLink="/edit_item">
+          <i class="fa-solid fa-file-pen"></i>
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-trash-can"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

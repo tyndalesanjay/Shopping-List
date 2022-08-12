@@ -1,0 +1,45 @@
+.container {
+  padding: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  /* border: 1px solid red; */
+  border-radius: 1vw;
+  width: 18vw;
+  margin-bottom: 0.5vw;
+  overflow: hidden;
+}
+.top {
+  color: whitesmoke;
+  background: #70d263;
+}
+.top h3 {
+  font-size: 1.4vw;
+  padding: 2%;
+}
+
+.body {
+  color: whitesmoke;
+  background: #343434;
+  padding: 1vw;
+}
+.body > p {
+  font-size: 1.2vw;
+  padding: 1%;
+}
+.body > div {
+  /* border: 1px solid red; */
+  text-align: end;
+}
+.fa-file-pen {
+  color: #007bff;
+  padding: 4%;
+}
+.fa-trash-can {
+  color: #dc3545;
+  padding: 4%;
+}

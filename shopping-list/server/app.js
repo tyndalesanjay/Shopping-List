@@ -12,9 +12,11 @@ app.use(express.urlencoded({ extended: true }))
 
 // Routers
 const indexRouter = require('./routes/index.routes')
+const categoryRouter = require('./routes/category.route')
 
 // Routes
-app.use('/', indexRouter)
+app.use('/', indexRouter),
+app.use('/category', categoryRouter)
 
 // Start Express App
 mongoose

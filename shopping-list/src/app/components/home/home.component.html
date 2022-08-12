@@ -1,0 +1,13 @@
+<div class="card" *ngFor="let category of categories">
+    <button>
+      <p routerLink="/shopping_list/{{category._id}}">{{category.category}}</p>
+      <div class="icons">
+        <a routerLink="/edit_category">
+          <i class="fa-solid fa-file-pen"></i>
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-trash-can"></i>
+        </a>
+      </div>
+    </button>
+</div>

@@ -1,0 +1,34 @@
+header{
+    background: #5bc0e7;
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+}
+
+header > h1{
+    font-size: 3vw;
+    color: #4c594d;
+    transition: 1s;
+}
+header>h1:hover{
+    cursor: pointer;
+    color: red;
+}
+/* span{
+    color: red;
+} */
+
+nav a{
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.3vw;
+    padding: 1vw;
+    margin: .5vw;
+    transition: 1s;
+}
+nav a:hover{
+    border-bottom: 2px solid red;
+}

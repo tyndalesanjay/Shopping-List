@@ -1,0 +1,68 @@
+.card {
+    /* border: 1px solid red; */
+    width: 45vw;
+    margin: auto;
+    margin-top: 10vw;
+  
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+    /* border: 1px solid red; */
+    width: 20vw;
+    border: none;
+    text-decoration: none;
+    color: #ebebeb;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    background: #787aed;
+    font-size: 1.3vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  button > p {
+    /* border: 1px solid red; */
+    padding: 1vw;
+    transition: 0.5s;
+  }
+  button > p:hover {
+    background: #4c4d98;
+    cursor: pointer;
+  }
+  
+  .icons {
+    /* border: 1px solid red; */
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1vw;
+    /* text-align: end; */
+  }
+  .fa-file-pen {
+    /* border: 1px solid red; */
+    color: #013e7e;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    transition: 0.5s;
+  }
+  .fa-trash-can {
+    /* border: 1px solid red; */
+    color: #7e0914;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    transition: 0.5s;
+  }
+  
+  .fa-file-pen:hover,
+  .fa-trash-can:hover {
+    /* background: #4c4d98; */
+    color: black;
+    cursor: pointer;
+  }
