@@ -9,6 +9,7 @@ import { ShoppingEditComponent } from './pages/shopping-edit/shopping-edit.compo
 import { ShoppingAddComponent } from './pages/shopping-add/shopping-add.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryEditComponent } from './pages/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShoppingListComponent,
     ShoppingEditComponent,
     ShoppingAddComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,

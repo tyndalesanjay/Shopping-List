@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- <a routerLink="/students">
+      <i class="fa-solid fa-circle-arrow-left"></i>
+      Back</a
+    > -->
+
+  <form action="" (submit)="onEditSubmit(category._id)" [formGroup]="editList">
+    <h2>Edit category</h2>
+    <div hidden>
+      <label for="_id">ID</label><br />
+      <input type="text" name="_id"/>
+    </div>
+
+    <div>
+      <label for="category">Category name</label><br />
+      <input type="text" id="category" value="{{category.category}}" name="category" formControlName="category"/>
+    </div>
+
+    <div>
+      <button>Update category</button>
+    </div>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 export class Items {
-  _id: String;
+  _id?: String;
   item_name: String;
-  categoryID: String;
+  categoryID?: String;
   price: Number;
   quantity: Number;
 

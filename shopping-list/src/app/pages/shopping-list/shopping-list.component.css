@@ -13,6 +13,10 @@
   margin-bottom: 0.5vw;
   overflow: hidden;
 }
+
+.card > a {
+  cursor: pointer;
+}
 .top {
   color: whitesmoke;
   background: #70d263;

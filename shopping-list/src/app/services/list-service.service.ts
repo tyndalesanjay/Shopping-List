@@ -24,7 +24,7 @@ export class ListServiceService {
   }
 
   update(data: Items, id: any): Observable<any>{
-    return this.http.put<Items>(`${this.baseUrl + 'update_item'}/${id}`, data)
+    return this.http.patch<Items>(`${this.baseUrl + 'update_item'}/${id}`, data)
   }
 
   deleteItem(id: any): Observable<any> {

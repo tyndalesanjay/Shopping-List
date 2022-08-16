@@ -46,12 +46,12 @@ exports.getItemById =  async (req, res) => {
 	Update Items
 */
 
-exports.updateItem = async(req, res, next) => {
+exports.updateItem = async(req, res) => {
 	try {
-		let items = await Items.updateOne(req.param.id, req.body)
-		JSONResponse.success(res, 'Success', items, 200)
+		const item = await Items.findByIdAndUpdate(req.params.id, req.body)
+		JSONResponse.success(res, "Success", item, 200)
 	} catch (error) {
-		JSONResponse.error(res, 'Failure handling item model.', error, 500)
+		JSONResponse.error(res, 'Failure', error, 500 )
 	}
 }
 

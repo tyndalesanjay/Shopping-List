@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Items } from 'src/app/interfaces/items';
 import { FormsModule,FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { ListServiceService } from 'src/app/services/list-service.service';
 import { CategoryServiceService } from 'src/app/services/category-service.service';
 import { Categories } from 'src/app/interfaces/category';
@@ -17,12 +18,12 @@ export class ShoppingAddComponent implements OnInit {
   addList:any;
   constructor( private listService: ListServiceService,
     private fb:FormBuilder,
-    private routes:Router, private categoryService: CategoryServiceService) {
+    private routes:Router, private categoryService: CategoryServiceService, private location: Location) {
       this.addList = fb.group ({
-        item_name:['' ],
+        item_name:[''],
         categoryID:[''],
-        price:[],
-        quantity:[]
+        price:[''],
+        quantity:['']
 
       })
 
@@ -38,6 +39,6 @@ export class ShoppingAddComponent implements OnInit {
     console.log(this.addList.value);
     this.listService.create(this.addList.value).subscribe();
     alert("Successful");
-    this.routes.navigate(['/home']);
+    this.location.back()
   }
 }

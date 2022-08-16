@@ -44,13 +44,16 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   updateItem(id: any) {
+    console.log(id);
+    
     let data = {
       item_name: this.updateInfo.item_name,
       price: this.updateInfo.price,
       quantity: this.updateInfo.quantity
     }
-    this.listService.update(id, data).subscribe(()=> {
+    this.listService.update(data, id).subscribe(()=> {
       console.log(data)
+
     })
   }
 

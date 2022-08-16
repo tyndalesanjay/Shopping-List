@@ -1,5 +1,5 @@
 const express = require('express')
-const { getCat, getCatItems, createcate, updatecate, deletecat } = require('../controllers/category.controller')
+const { getCat, getCatItems, createcate, updatecate, deletecat, getCatById } = require('../controllers/category.controller')
 const router = express.Router()
 
 router 
@@ -8,8 +8,9 @@ router
     
 router
     .get('/catList/:id', getCatItems)
-    .post('/updateCate/:id', updatecate)
-    .get('/delete/:id', deletecat)
+    .get('/getById/:id', getCatById)
+    .put('/updateCate/:id', updatecate)
+    .delete('/delete/:id', deletecat)
 
 
 module.exports = router

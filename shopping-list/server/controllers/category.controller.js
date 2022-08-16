@@ -35,6 +35,15 @@ exports.createcate = async (req, res, next) => {
     }
 }
 
+exports.getCatById = async(req, res) => {
+    try {
+        let categories = await categoryModel.findById(req.params.id)
+        JSONResponse.success(res, 'Success', categories, 200)
+    } catch (error) {
+        JSONResponse.error(res, "Failure handling model", error, 500)
+    }
+}
+
 exports.updatecate = async (req, res, next) => {
     let data ={
         category: req.body.category
@@ -50,7 +59,7 @@ exports.updatecate = async (req, res, next) => {
 
 exports.deletecat = async (req, res, next) => {
     try {
-        const deletecat = await categoryModel.findByIdAndDelete(req.params.id)
+        const deletecat = await categoryModel.findOneAndDelete(req.params.id)
         JSONResponse.success(res, 'Success', deletecat, 200)
     } catch (error) {
         JSONResponse.error(res, "Failure handling item model.", error, 500)

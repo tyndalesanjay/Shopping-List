@@ -13,8 +13,7 @@ export class HomeComponent implements OnInit {
 
   categories: Categories[] = []
   category: any = []
-  isShow: boolean = false
-  isEdited: boolean = false
+  isShow: boolean = true
   addList:any;
   editList: any
 
@@ -24,17 +23,11 @@ export class HomeComponent implements OnInit {
       category:['']
 
     })
-    this.editList = fb.group ({
-      category:['']
-
-    })
+    
    }
 
   onClick() {
     this.isShow = !this.isShow
-  }
-  onEditClick() {
-    this.isEdited = !this.isEdited
   }
 
   ngOnInit(): void {
@@ -47,12 +40,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  deleteItem(id: String){
+  deleteItem(id: any){
     this.categoryService.deleteItem(id).subscribe((results) => {
       if(results) {
         alert('Worked')
+        window.location.reload()
+      } else {
+        console.error();
       }
-      alert('Fail')
     })
   }
 
@@ -60,7 +55,12 @@ export class HomeComponent implements OnInit {
 
     console.log(this.addList.value);
     this.categoryService.createCate(this.addList.value).subscribe(() => {
-      this.routes.navigate(['/home']);
+      if(!this.addList.value) {
+        console.log('Did Not Work')
+      } else {
+        alert(`Created + ${this.addList.value}`)
+        window.location.reload()
+      }
     });
     
   }
@@ -68,7 +68,10 @@ export class HomeComponent implements OnInit {
   onEditSubmit(id:any) {
     console.log(this.editList.value);
     this.categoryService.updateCate(id, this.editList.value).subscribe(() => {
+      console.log('Worked');
+      
       this.routes.navigate(['/home']);
+      
     });
   }
 
