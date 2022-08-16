@@ -8,14 +8,17 @@ import { Categories } from 'src/app/interfaces/category';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit {
+  lists: Items[] = [];
+  category: any = [];
 
-  lists: Items[] = []
-  category:any = []
-
-  constructor(private listService: ListServiceService,private categoryService: CategoryServiceService ,private route: ActivatedRoute,) { }
+  constructor(
+    private listService: ListServiceService,
+    private categoryService: CategoryServiceService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     // this.listService.getAll().subscribe((data: any) => {
@@ -31,14 +34,8 @@ export class ShoppingListComponent implements OnInit {
 
   getById(id: any) {
     this.categoryService.getCatList(id).subscribe((data: any) => {
-      this.lists = data.data
-      this.category = data.data[0].categoryID.category
-      
-    })
+      this.lists = data.data;
+      this.category = data.data[0].categoryID.category;
+    });
   }
-
-
-
-
-
 }

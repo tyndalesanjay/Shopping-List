@@ -1,3 +1,6 @@
+<div style="text-align: right;">
+      <button (click)="onClick()">New category</button>
+</div>
 <div class="card" *ngFor="let category of categories">
     <button>
       <p routerLink="/shopping_list/{{category._id}}">{{category.category}}</p>
@@ -9,26 +12,27 @@
           <i class="fa-solid fa-trash-can"></i>
         </a>
       </div>
-    </button>
+    </button> 
 </div>
 
-<div class="container">
-  <form action="">
-    <h2>Edit category</h2>
-    <div hidden>
-      <label for="_id">ID</label><br />
-      <input type="text" id="_id" name="_id" />
-    </div>
-    
-    <div>
-      <label for="category">Category name</label><br />
-      <input type="text" id="category" name="category" />
-    </div>
-    
-    <div>
-      <button>
-        Update category
-      </button>
-    </div>
-  </form>
+<div class="container" >
+  <div class="shopping-form" *ngIf="isShow">
+    <form (submit)="onSubmit()" [formGroup]="addList" action="">
+      <h1>Add New Item</h1>
+      <label for="">Item Name</label>
+      <input type="text" name="category" formControlName="category">
+
+      <button type="submit"  > Add Item</button>
+    </form>
+  </div>
+
+  <!-- <div class="shopping-form" *ngIf="isEdited">
+    <form (submit)="onEditSubmit(categories)" [formGroup]="editList" action="">
+      <h1>Add New Item</h1>
+      <label for="">Item Name</label>
+      <input type="text" name="category" formControlName="category">
+
+      <button type="submit"  > Add Item</button>
+    </form>
+  </div> -->
 </div>

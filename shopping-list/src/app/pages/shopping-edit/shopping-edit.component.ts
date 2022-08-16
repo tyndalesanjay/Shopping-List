@@ -31,13 +31,6 @@ export class ShoppingEditComponent implements OnInit {
     })
   }
 
-  // updateForm = this.fb.group({
-  //   categoryID: [''],
-  //   item_name: ['', Validators.required],
-  //   price: ['', Validators.required],
-  //   quantity: ['', Validators.required]
-  // })
-
   getById(id: any) {
     this.listService.getItemById(id).subscribe((data: any) => {
       this.item = data.data

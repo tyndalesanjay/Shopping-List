@@ -21,7 +21,7 @@ export class CategoryServiceService {
   }
 
   createCate(data: any): Observable<Categories> {
-    return this.http.post<Categories>(this.baseUrl, data)
+    return this.http.post<Categories>(`${this.baseUrl + 'createCate'}`, data)
   }
 
   updateCate(id: any, data: any): Observable<any> {

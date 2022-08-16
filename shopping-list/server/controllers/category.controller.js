@@ -22,25 +22,6 @@ exports.getCatItems = async (req, res) => {
     }
 }
 
-// exports.getcatItems = async (req, res) => {
-// 	try {
-// 		const items = await categoryModel.aggregate([
-//             { $lookup:
-//               {
-//                 from: 'items',
-//                 localField: '_id',
-//                 foreignField: 'categoryID',
-//                 as: "details"
-//               }
-//             }
-//           ])
-//         JSONResponse.success(res, 'Success.', items, 200)
-// 	} catch (error) {
-// 		JSONResponse.error(res, "Failure handling item model.", error, 500)
-//         console.log(error)
-// 	}
-// }
-
 exports.createcate = async (req, res, next) => {
     let data = {
         category: req.body.category

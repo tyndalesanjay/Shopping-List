@@ -14,24 +14,6 @@ exports.getAllItems = async (req, res) => {
 	}
 }
 
-// exports.getAllItems = async (req, res) => {
-// 	try {
-// 		const items = await Items.aggregate ([
-// 			{ $lookup:
-// 			  {
-// 				from: 'category',
-// 				localField: '_id',
-// 				foreignField: 'categoryID',
-// 				as: 'lists'
-// 			  }
-// 			}
-// 		])
-//         JSONResponse.success(res, 'Success.', items, 200)
-// 	} catch (error) {
-// 		JSONResponse.error(res, "Failure handling item model.", error, 500)
-// 	}
-// }
-
 /**
  * ### Description
  * Creating an item
