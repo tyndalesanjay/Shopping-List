@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   categories: Categories[] = []
   category: any = []
-  isShow: boolean = true
+  isShow: boolean = false
   addList:any;
   editList: any
 

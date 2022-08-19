@@ -35,8 +35,10 @@ export class ShoppingListComponent implements OnInit {
   getById(id: any) {
     this.categoryService.getCatList(id).subscribe((data: any) => {
       this.lists = data.data;
-      // this.category = data.data[0].categoryID.category;
+      this.category = data.data[0].categoryID;
     });
+    console.log(this.category);
+    
   }
 
   deleteItem(id: any){
